@@ -38,14 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'rest_framework'
+    'campaigns',
+    'donations',
+    'admin_dashboard',
+    'rest_framework',
     'rest_framework.authtoken',
 ]
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User' ,
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 
